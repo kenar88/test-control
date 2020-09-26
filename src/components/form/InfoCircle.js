@@ -1,9 +1,17 @@
 import React from 'react';
 
-const InfoCircle = (props) => {
+const InfoCircle = () => {
   return (
-    <i className="fa fa-info-circle fa_custom fa-1x"></i>
-  )
+    <React.Fragment>
+      <div className="circle">
+        <div className="circle__before-cross"></div>
+        <div className="circle__after-cross"></div>
+      </div>
+      <div className="circle">
+        <div className="circle__before-info">i</div>
+      </div>
+    </React.Fragment>
+  );
 }
 
 export default InfoCircle;

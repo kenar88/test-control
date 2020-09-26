@@ -14,11 +14,13 @@ const Form = () => {
             <Field name='paymentType' component='input' type='radio' value='perMonth' />{' '}
             Оклад за месяц            
           </label>
-          <label className='form-container__label'>
-            <Field name='paymentType' component='input' type='radio' value='defaultPay' />{' '}
-            МРОТ
+          <div>
+            <label>
+              <Field name='paymentType' component='input' type='radio' value='defaultPay' />{' '}
+              МРОТ
+            </label>
             <InfoCircle />
-          </label> 
+          </div>
           <label className='form-container__label'>
             <Field name='paymentType' component='input' type='radio' value='perDay' />{' '}
             Оплата за день

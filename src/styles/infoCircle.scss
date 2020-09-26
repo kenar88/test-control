@@ -1,0 +1,45 @@
+.circle {
+  display: inline-block;
+  margin-left: 5px;
+  width: 18px;
+  height: 18px;
+  position: relative;
+  border-radius: 50%;
+  border: 0.5px solid gray;
+  cursor: pointer;
+  z-index: 2;
+  top: 3px;
+}
+
+.circle__before-cross,
+.circle__after-cross {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 2px;
+  background-color: gray;
+  border-radius: 0;
+  
+}
+
+.circle__before-cross {
+transform: rotate(225deg);
+left: 3px;
+top: 7px;
+}
+
+.circle__after-cross {
+  transform: rotate(-225deg);
+  left: 3px;
+  top: 7px;
+}
+
+.circle__before-info {
+  content: '';
+  position: absolute;
+  font-size: 14px;
+  z-index: 0;
+  color: gray;
+  left: 6.5px;
+  top: -3px;
+}
