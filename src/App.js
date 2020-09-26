@@ -6,14 +6,16 @@ import InfoBlock from './components/InfoBlock';
 
 function App(props) {
   const paymentType = props.form.control === undefined ? null : props.form.control.values.paymentType;
-  
+  console.log(props.form)
   return (
-    <div>
-      <PaymentForm />
+    <React.Fragment>
+      <div className='form-container'>
+        <PaymentForm />
+      </div>
       {paymentType === 'perMonth' ?
-        <InfoBlock tax={props.tax} sum={1} isTaxed={true}/>
+        <InfoBlock tax={13} sum={40000} isTaxed={true}/>
         : ''}
-    </div>
+    </React.Fragment>
   );
 }
 

@@ -1,1 +1,38 @@
+$base-margin: 1em;
+
+.form-container {
+  margin: $base-margin;
+  font-weight: 600;
+}
+
+.form-container__label {
+  display: block;
+}
+
+.form-container__label_gray {
+  font-size: 12px;
+  color: gray;
+}
+
+.form-container__radio {
+  margin: 0.3em;  
+}
+
+.info-container {
+  width: max-content;
+  margin: $base-margin;
+  padding: 1.2em;
+  background-color: #fbf4da;
+  border-radius: 2px;
+}
+
+.info-container > p {
+  margin-bottom: 0.3em;
+}
+
+.fa_custom {
+  padding-left: 5px;
+  color: #007bff;
+}
+
 @import '~bootstrap/scss/bootstrap.scss';

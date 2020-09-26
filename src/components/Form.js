@@ -1,27 +1,29 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 
-import renderSwitchCheckField from './Switch';
+import renderSwitchCheckField from './form/Switch';
+import InfoCircle from './form/InfoCircle';
 
 const Form = () => {
   return (
-    <div>
-    <label>Сумма</label>
+    <React.Fragment>
+    <label className='form-container__label form-container__label_gray'>Сумма</label>
       <form>
-        <div>
-          <label style={{display: 'block'}}>
+        <div className='form-container__radio'>
+          <label className='form-container__label'>
             <Field name='paymentType' component='input' type='radio' value='perMonth' />{' '}
-            Оклад за месяц
+            Оклад за месяц            
           </label>
-          <label style={{display: 'block'}}>
+          <label className='form-container__label'>
             <Field name='paymentType' component='input' type='radio' value='defaultPay' />{' '}
             МРОТ
+            <InfoCircle />
           </label> 
-          <label style={{display: 'block'}}>
+          <label className='form-container__label'>
             <Field name='paymentType' component='input' type='radio' value='perDay' />{' '}
             Оплата за день
           </label> 
-          <label style={{display: 'block'}}>
+          <label className='form-container__label'>
             <Field name='paymentType' component='input' type='radio' value='perHour' />{' '}
             Оплата за час
           </label>
@@ -34,7 +36,7 @@ const Form = () => {
           <label>₽</label>
         </div>
       </form>
-    </div> 
+    </React.Fragment> 
   );
 }
 
