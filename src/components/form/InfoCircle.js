@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+
 const info = `МРОТ- минимальный размер оплаты труда. Разный для разных регионов`;
 
 const InfoCircle = () => {

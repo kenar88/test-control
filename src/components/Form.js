@@ -25,28 +25,57 @@ const Form = (props) => {
       <form>
         <div className='form-container__radio'>
           <label className='form-container__label'>
-            <Field name='paymentType' component='input' type='radio' value='perMonth' />{' '}
-            Оклад за месяц            
+            <Field
+              name='paymentType'
+              component='input'
+              type='radio'
+              value='perMonth'
+            />{' '}
+            Оклад за месяц
           </label>
           <div>
             <label>
-              <Field name='paymentType' component='input' type='radio' value='defaultPay' />{' '}
+              <Field
+                name='paymentType'
+                component='input'
+                type='radio'
+                value='defaultPay'
+             />{' '}
               МРОТ
             </label>
             <InfoCircle />
           </div>
           <label className='form-container__label'>
-            <Field name='paymentType' component='input' type='radio' value='perDay' />{' '}
+            <Field
+              name='paymentType'
+              component='input'
+              type='radio'
+              value='perDay'
+            />{' '}
             Оплата за день
           </label> 
           <label className='form-container__label'>
-            <Field name='paymentType' component='input' type='radio' value='perHour' />{' '}
+            <Field
+              name='paymentType'
+              component='input'
+              type='radio'
+              value='perHour'
+            />{' '}
             Оплата за час
           </label>
         </div>
         <div className={`form-container-payment ${!salary ? 'hidden' : ''}`}>
-          <Field name='isTaxed' id='tax' component={Switch} type='checkbox' />{' '}
-          <Field name='payroll' component={FormInput} type='text' />
+          <Field
+            name='isTaxed'
+            id='tax'
+            component={Switch}
+            type='checkbox'
+          />{' '}
+          <Field
+            name='payroll'
+            component={FormInput}
+            type='text'
+          />
         </div>
       </form>
     </React.Fragment> 
