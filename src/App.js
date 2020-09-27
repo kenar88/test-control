@@ -4,16 +4,28 @@ import { connect } from 'react-redux';
 import PaymentForm from './components/Form';
 import InfoBlock from './components/InfoBlock';
 
+const mapTypeToSalary = {
+  'perMonth': 40000,
+  'perHour': 400,
+  'perDay': 1500,
+  'defaultPay': false,
+};
+
 function App(props) {
   const paymentType = props.form.control === undefined ? null : props.form.control.values.paymentType;
-  console.log(props.form)
+  let salary = paymentType && mapTypeToSalary[paymentType];
+
   return (
     <React.Fragment>
       <div className='form-container'>
-        <PaymentForm />
+        <PaymentForm salaryByType={salary} />
       </div>
       {paymentType === 'perMonth' ?
-        <InfoBlock tax={13} sum={40000} isTaxed={true}/>
+        <InfoBlock
+          tax={props.tax}
+          sum={props.form.control.values.payroll}
+          isTaxed={props.form.control.values.isTaxed}
+        />
         : ''}
     </React.Fragment>
   );

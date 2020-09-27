@@ -9,7 +9,7 @@ const InfoBlock = (props) => {
       tax: calculatedTax,
       totalSum: initialPay,
     }
-    console.log(initialPay, calculatedTax)
+
     if (taxed) {
       payroll.employeePayment = initialPay;
       payroll.totalSum = initialPay + calculatedTax;
@@ -17,7 +17,7 @@ const InfoBlock = (props) => {
 
     return payroll;
   };
-  const payroll = getPayroll(sum, tax, isTaxed);
+  const payroll = getPayroll(Number(sum), tax, isTaxed);
 
   return (
     <div className='info-container'>

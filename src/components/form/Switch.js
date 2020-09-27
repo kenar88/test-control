@@ -1,6 +1,6 @@
 import React from 'react'
 
-const renderSwitchCheckField = ({input}) => {
+const Switch = ({input}) => {
   return (
     <div style={{paddingLeft: 0}} className="custom-control custom-switch">
       <label style={{paddingRight: '40px'}} htmlFor="customSwitch1">Указать с НДФЛ</label>
@@ -10,4 +10,4 @@ const renderSwitchCheckField = ({input}) => {
   );
 }
 
-export default renderSwitchCheckField;
+export default Switch;

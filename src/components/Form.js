@@ -1,10 +1,24 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import { Field, reduxForm } from 'redux-form';
 
-import renderSwitchCheckField from './form/Switch';
+import Switch from './form/Switch';
+import FormInput from './form/FormInput';
 import InfoCircle from './form/InfoCircle';
 
-const Form = () => {
+const Form = (props) => {
+  const salary = props.salaryByType;
+  const mounted = useRef();
+
+  useEffect(() => {
+    if (!mounted.current) {
+      mounted.current = true;
+    } else {
+      if(salary) {
+        props.change('payroll', salary);
+      }
+    }
+  });
+
   return (
     <React.Fragment>
     <label className='form-container__label form-container__label_gray'>Сумма</label>
@@ -30,12 +44,9 @@ const Form = () => {
             Оплата за час
           </label>
         </div>
-        <div>
-          <Field name="isTaxed" id="tax" component={renderSwitchCheckField} type="checkbox" />{' '}
-        </div>
-        <div>
-          <Field name="payroll" component="input" type="text" value='40000' />{' '}
-          <label>₽</label>
+        <div className={`form-container-payment ${!salary ? 'hidden' : ''}`}>
+          <Field name='isTaxed' id='tax' component={Switch} type='checkbox' />{' '}
+          <Field name='payroll' component={FormInput} type='text' />
         </div>
       </form>
     </React.Fragment> 
@@ -47,6 +58,6 @@ export default reduxForm({
   initialValues: {
     paymentType: 'perMonth',
     isTaxed: true,
-    payroll: '40000',
-  }
+    payroll: '50000',
+  },
 })(Form);

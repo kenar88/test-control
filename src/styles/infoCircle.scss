@@ -9,6 +9,59 @@
   cursor: pointer;
   z-index: 2;
   top: 3px;
+
+  &::before,
+  &::after {
+    opacity: 0;
+    visibility: hidden;
+    margin-top: -0.5em;
+  }
+
+  &::after {
+    width: 0;
+    height: 0;
+    border-bottom: 12px solid #5e6cab;
+    border-right: 12px solid transparent;
+    content: "";
+    left: 60%;
+    bottom: -15px;
+    position: absolute;
+  }
+
+  &::before {
+    content: attr(data-tooltip);
+    display: inline-block;
+    position: absolute;
+    width: 220px;
+    top: 200%;
+    left: 70px;
+    margin-left: -4.75em;
+    border-radius: 4px;
+    background: #5e6cab;
+    color: white;
+    font-size: 0.8em;
+    line-height: 1.1;
+    padding: 0.75em 0.95em;
+  }
+
+  &:hover::before,
+  &:hover::after {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &:hover {
+    color: #5e6cab;
+    border-color: #5e6cab;
+  }
+}
+
+.visible-tooltip {
+  &::before,
+  &::after {
+    opacity: 1;
+    visibility: visible;
+  }
 }
 
 .circle__before-cross,
@@ -23,9 +76,9 @@
 }
 
 .circle__before-cross {
-transform: rotate(225deg);
-left: 3px;
-top: 7px;
+  transform: rotate(225deg);
+  left: 3px;
+  top: 7px;
 }
 
 .circle__after-cross {
