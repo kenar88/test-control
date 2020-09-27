@@ -13,7 +13,7 @@ const mapTypeToSalary = {
 
 const App = (props) => {
   const paymentType = props.form.control === undefined ? null : props.form.control.values.paymentType;
-  let salary = paymentType && mapTypeToSalary[paymentType];
+  const salary = paymentType && mapTypeToSalary[paymentType];
 
   return (
     <React.Fragment>

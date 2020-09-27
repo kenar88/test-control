@@ -45,6 +45,12 @@ $weight: 600;
   margin-bottom: 0.3em;
 }
 
+.controll-label {
+  vertical-align: top;
+  font-size: 12px;
+  font-weight: $weight;
+}
+
 .fa_custom {
   padding-left: 5px;
   color: #007bff;
