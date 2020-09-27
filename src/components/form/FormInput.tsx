@@ -1,7 +1,14 @@
-import React from 'react';
+import * as React from 'react';
 
-const FormInput = (props) => {
-  const { type, value, name, ...other} = props.input;
+interface Props {
+  input: Object;
+  meta: Object;
+  type: string;
+}
+
+const FormInput: React.FC<Props> = (props): JSX.Element => {
+  console.log(props);
+  const { type, value, name, ...other}: Record<string, any> = props.input;
 
   return (
     <React.Fragment>

@@ -5,11 +5,16 @@ import Switch from './form/Switch';
 import FormInput from './form/FormInput';
 import InfoCircle from './form/InfoCircle';
 
-const Form = (props) => {
-  const salary = props.salaryByType;
-  const mounted = useRef();
+interface Props {
+  salaryByType: number;
+  change: Function;
+}
 
-  useEffect(() => {
+const PaymentForm: React.FC<Props> = (props): JSX.Element => {
+  const salary: number = props.salaryByType;
+  const mounted: any = useRef();
+
+  useEffect((): void => {
     if (!mounted.current) {
       mounted.current = true;
     } else {
@@ -89,4 +94,4 @@ export default reduxForm({
     isTaxed: true,
     payroll: '50000',
   },
-})(Form);
+})(PaymentForm as any);

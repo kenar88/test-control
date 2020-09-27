@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import PaymentForm from './components/Form';
-import InfoBlock from './components/InfoBlock';
+import PaymentForm from './components/PaymentForm.tsx';
+import InfoBlock from './components/InfoBlock.tsx';
 
 const mapTypeToSalary = {
   'perMonth': 40000,
@@ -11,7 +11,7 @@ const mapTypeToSalary = {
   'defaultPay': false,
 };
 
-function App(props) {
+const App = (props) => {
   const paymentType = props.form.control === undefined ? null : props.form.control.values.paymentType;
   let salary = paymentType && mapTypeToSalary[paymentType];
 

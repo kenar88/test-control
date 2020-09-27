@@ -1,6 +1,10 @@
-import React from 'react'
+import * as React from 'react'
 
-const Switch = ({input}) => {
+interface Props {
+  input: string;
+}
+
+const Switch: React.FC<Props> = ({ input }): JSX.Element => {
   return (
     <div style={{paddingLeft: 0}} className="custom-control custom-switch">
       <label style={{paddingRight: '40px'}} htmlFor="customSwitch1">Указать с НДФЛ</label>

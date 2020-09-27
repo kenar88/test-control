@@ -1,9 +1,15 @@
-import React from 'react';
+import * as React from 'react';
 
-const InfoBlock = (props) => {
+interface Props {
+  tax: number;
+  sum: string;
+  isTaxed: boolean;
+}
+
+const InfoBlock: React.FC<Props> = (props): JSX.Element => {
   const { tax, sum, isTaxed } = props;
-  const getPayroll = (initialPay, curentTax, taxed) => {
-    const calculatedTax = +(Number(initialPay) * Number(curentTax) / 100).toFixed();
+  const getPayroll = (initialPay: number, curentTax: number, taxed: boolean): Object => {
+    const calculatedTax: number = +(Number(initialPay) * Number(curentTax) / 100).toFixed();
     const payroll = {
       employeePayment: initialPay - calculatedTax,
       tax: calculatedTax,
@@ -17,7 +23,7 @@ const InfoBlock = (props) => {
 
     return payroll;
   };
-  const payroll = getPayroll(Number(sum), tax, isTaxed);
+  const payroll: Record<string, any> = getPayroll(Number(sum), tax, isTaxed);
 
   return (
     <div className='info-container'>

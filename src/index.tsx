@@ -6,8 +6,7 @@ import { Provider } from 'react-redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import logger from 'redux-logger'
 
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import App from './App.js';
 import control from './reducer';
 import './styles/index.scss';
 
@@ -24,5 +23,3 @@ ReactDOM.render(
   </Provider>,
   document.getElementById('root')
 );
-
-serviceWorker.unregister();
