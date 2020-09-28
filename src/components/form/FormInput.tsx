@@ -7,7 +7,6 @@ interface Props {
 }
 
 const FormInput: React.FC<Props> = (props): JSX.Element => {
-  console.log(props);
   const { type, value, name, ...other}: Record<string, any> = props.input;
 
   return (

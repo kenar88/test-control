@@ -1,20 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
+import { createStore, combineReducers } from 'redux';
 import { reducer as formReducer } from 'redux-form';
 import { Provider } from 'react-redux';
-import logger from 'redux-logger'
 
 import App from './App.js';
 import control from './reducer';
 import './styles/index.scss';
 
-const middlewareEnhancer  = compose(applyMiddleware(logger));
 const roodReducer = combineReducers({
   control,
   form: formReducer,
 });
-const store = createStore(roodReducer, middlewareEnhancer);
+const store = createStore(roodReducer);
 
 ReactDOM.render(
   <Provider store={store}>
